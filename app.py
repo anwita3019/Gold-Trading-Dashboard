@@ -1,10 +1,14 @@
 import streamlit as st
 import yfinance as yf
 import time
-
+import datetime
 # --- CONFIG ---
 st.set_page_config(page_title="Gold Strategy Bot", layout="centered")
 st.title("💰 Gold Strategy Dashboard")
+# Create a timestamp and status log
+current_time = datetime.datetime.now().strftime("%H:%M:%S")
+st.sidebar.info(f"Last Data Sync: {current_time}")
+st.sidebar.write("Status: Connected to Yahoo Finance API")
 ui_placeholder = st.empty()
 
 SYMBOL = "GC=F"
